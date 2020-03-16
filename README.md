@@ -12,7 +12,7 @@ All source code in the [Ruby on Rails Tutorial](https://www.railstutorial.org/) 
 ## Getting started
 To get started with the app, clone the repo and then install the needed gems:
 ```
-$ bundle install --without production
+$ bundle config set without 'production'
 ```
 Next, migrate the database:
 ```
