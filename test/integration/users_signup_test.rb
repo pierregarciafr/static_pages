@@ -15,7 +15,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     assert_select 'div.alert.alert-danger'
   end
 
-  test "new valid user creation" do
+  test 'new valid user creation' do
     get signup_path
     assert_difference 'User.count' do
       post users_path, params: { user: { name: 'Foo bar',
@@ -25,6 +25,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
     follow_redirect!
     assert_template 'users/show'
-    assert_not flash.FILL_IN
+    assert_not flash.empty?
   end
 end
