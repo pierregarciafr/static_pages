@@ -5,24 +5,6 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     @user = users(:michael)
   end
 
-  # test "should dismiss the flash after rendering" do
-  # # aller sur la page de la nouvelle session
-  # get login_path
-  # # valider le render de la view new
-  # assert_template 'sessions/new'
-  # # envoyer POSTer des donnees non valides
-  # post login_path, params: { session: { email: '', password: '' } }
-  # # non valide => verifier que le flash est cree
-
-  # assert_template 'sessions/new'
-  # # verifier que la new est bien rendered à nouveau
-  # assert_not flash.empty?
-  # # aller sur la homepage (root)
-  # get root_path
-  # # verifier que la flash est vide
-  # assert flash.empty?
-  # end
-
   test 'login valid email / invalid password' do
     get login_path
     assert_template 'sessions/new'
@@ -60,5 +42,19 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert_select 'a[href=?]', login_path
     assert_select 'a[href=?]', logout_path, count: 0
     assert_select 'a[href=?]', user_path(@user), count: 0
+  end
+
+  test 'login with remembering' do
+    log_in_as(@user, remember_me: '1')
+    # assert_not_empty cookies[:remember_token]
+    assert_equal cookies[:remember_token], assigns(:user).remember_token
+  end
+
+  test 'login without remembering' do
+    # Log in to set the cookie.
+    log_in_as(@user, remember_me: '1')
+    # Log in again and verify that the cookie is deleted.
+    log_in_as(@user, remember_me: '0')
+    assert_empty cookies[:remember_token]
   end
 end
