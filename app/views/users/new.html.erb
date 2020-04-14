@@ -6,20 +6,9 @@
   </div>
   <div class="col-md-6">
 
-    <%= form_with(model:@user, local: true) do |f| %>
-      <%= render 'shared/error_messages' %>
+      <%= render 'form', user: @user %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form_control' %>
 
-      <%= f.label :email %>
-      <%= f.text_field :email, class: 'form_control' %>
-      <%= f.label :password %>
-      <%= f.text_field :password, class: 'form_control' %>
-      <%= f.label :password_confirmation %>
-      <%= f.text_field :password_confirmation, class: 'form_control' %>
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
-    <% end %>
 
   </div>
   <div class="col-md-3">
