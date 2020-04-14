@@ -14,7 +14,7 @@
               <%= link_to "Account", '#', class:'nav-link dropdown-toggle', id:'dropdownMenuButton', data: { toggle:"dropdown" }, aria: { haspopup:"true", expanded:"false" } %>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <li ><%= link_to 'Profile', current_user, class:"dropdown-item" %></li>
-                <li><%= link_to 'Settings', '#', class:"dropdown-item" %></li>
+                <li><%= link_to 'Settings', edit_user_path(current_user) , class:"dropdown-item" %></li> <!--  -->
                 <li class="dropdown-divider"></li>
                 <li><%= link_to 'Log out', logout_path, method: :delete, class:"dropdown-item" %></li>
               </ul>
