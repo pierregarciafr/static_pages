@@ -12,6 +12,15 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should redirect index when not logged in to login" do
+    # appel de index_path
+    get users_path
+    # verifier affichage de flash alert
+    # assert_not flash.empty?
+    # verifier redirection vers login url
+    assert_redirected_to login_url
+  end
+
   test "should redirect edit when not logged in to login" do
     get edit_user_path(@user)
     assert_not flash.empty?
