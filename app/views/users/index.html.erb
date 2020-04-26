@@ -1,13 +1,12 @@
-<% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="users">
-      <% @users.each do |user| %>
-      <h1>
-        <%= gravatar_for user%>
-        Name: <%= user.name %></br>
-        Email: <%= user.email %></section>br>
-      </h1>
-    </section>
-  </aside>
-</div>
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<%= will_paginate @users, class: 'digg_pagination' %>
+
+<ul class="users">
+      <%= render @users %>
+</ul>
+
+<%= will_paginate @users, class: 'digg_pagination' %>
+
+

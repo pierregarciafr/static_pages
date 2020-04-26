@@ -8,13 +8,28 @@
 puts 'erasing db'
 User.destroy_all
 
-# puts 'creating users'
+puts 'creating users'
 
-# user1 = User.new(id: 1, name: "Rails Tutorial", email: "railstutorial@example.com", password: 'password')
-#  #<User:0x00007fb338e98430
-# user2 = User.new(id: 2, name: "pierre garcia", email: "pg.pierre.garcia@free.fr", password: 'password')
+# Creating a main sample user
+User.create!(name:                  'Example User',
+             email:   'example@railstutorial.org',
+             password:              'password',
+             password_confirmation: 'password')
+# Creating MY user
+User.create!(name:                  'Pierrounet',
+             email:   'pierregcode@gmail.com',
+             password:              'password',
+             password_confirmation: 'password')
 
-# [user1, user2].each do |var|
-#    var.save
-#    var.valid? ? 'valide' : 'not valid'
-# end
+# Generate a bunch of additional users.
+99.times do |n|
+  puts "#{n + 1}th user being created" if n%10 == 0
+  name = Faker::Name.name
+  email = "example-#{n + 1}@railstutorial.org"
+  password = 'password'
+  User.create!(name:        name,
+               email:       email,
+               password:    password,
+               password_confirmation: password)
+end
+puts "Task finished !"
