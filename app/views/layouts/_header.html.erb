@@ -9,7 +9,7 @@
         <li><%= link_to "Home", root_path , class:"nav-link" %></li>
         <li><%= link_to "Help", help_path, class:"nav-link" %></li>
         <% if logged_in? %>
-          <li><%= link_to "Users", '#', class:'nav-link' %></li>
+          <li><%= link_to "Users", users_path, class:'nav-link' %></li>
             <li class="dropdown">
               <%= link_to "Account", '#', class:'nav-link dropdown-toggle', id:'dropdownMenuButton', data: { toggle:"dropdown" }, aria: { haspopup:"true", expanded:"false" } %>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
