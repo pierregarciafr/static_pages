@@ -14,8 +14,8 @@ module SessionsHelper
     if (user_id = session[:user_id]) # une session existe / est ouverte
       @current_user ||= User.find_by(id: user_id)
     elsif (user_id = cookies.signed[:user_id]) # un cookie avec user_id existe
-      #user = User.find_by(id: user_id)
-      user = User.where(id: user_id).first
+      user = User.find_by(id: user_id)
+      # user = User.where(id: user_id).first
       if user && user.authenticated?(cookies[:remember_token])
         log_in user
         @current_user = user
