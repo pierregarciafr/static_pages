@@ -8,7 +8,7 @@
 puts 'erasing db'
 User.destroy_all
 
-puts 'creating users'
+puts 'creating admin user'
 # Creating MY user
 User.create!(name:                  'Pierrounet',
              email:   'pierregcode@gmail.com',
@@ -20,11 +20,11 @@ User.create!(name:                  'Pierrounet',
              )
 
 # Creating a main sample user
+puts 'creating 2nd user'
 User.create!(name:                  'Example User',
              email:   'example@railstutorial.org',
              password:              'password',
              password_confirmation: 'password',
-             admin: false,
              activated: true,
              activated_at: Time.zone.now
              )
@@ -39,7 +39,6 @@ User.create!(name:                  'Example User',
                email:       email,
                password:    password,
                password_confirmation: password,
-               admin: false,
                activated: true,
                activated_at: Time.zone.now
                )

@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token # cookie : accessibilite du token sans le storer dans la DB
-  before_create :create_activation_digest
   before_save :downcase_email
+  before_create :create_activation_digest
 
   validates :name, presence: true, length: { maximum: 50 }
   validates :activated, default: false
@@ -19,6 +19,7 @@ class User < ApplicationRecord
                                                 : BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
+
   # generate Token
   def self.new_token
     SecureRandom.urlsafe_base64
@@ -37,10 +38,14 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, User.digest(remember_token))
   end
 
-  def authenticated?(remember_token) # different de self.remember_token
-    return false if remember_digest.nil?
+  def authenticated?(attribute, token)
+    # ( :remember = 'remember', remember_token)
+    # ( :activation = 'activation', activation_token)
+    # ( :reset = 'reset', reset_token)
+    digest = self.send("#{attribute}_digest") # egal  à   digest = send("#{attribute}_digest")
+    return false if digest.nil?
 
-    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+    BCrypt::Password.new(digest).is_password?(token)
   end
 
   def forget
@@ -51,10 +56,10 @@ private
   # Activation parameters
   def create_activation_digest
     self.activation_token = User.new_token
-    update_attribute(:activation_digest, User.digest(activation_token))
+    self.activation_digest = User.digest(activation_token)
   end
 
   def downcase_email
-    self.email = email.downcase
+    self.email.downcase!
   end
 end
