@@ -34,6 +34,16 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
+  # to initialize Mailer previews
+  # use this in developing on localhost
+  host = 'localhost:3000'
+  config.action_mailer.default_url_options = { host: host, protocol: 'http' } # not 'https'
+  # use this in developing on localhost
+
+  # use this on the Cloud IDE
+  #host = 'staticpages-pg.herokuapp.com'
+  #config.action_mailer.default_url_options = { host: host, protocol: 'https' }
+
   config.action_mailer.perform_caching = false
 
   # Print deprecation notices to the Rails logger.
