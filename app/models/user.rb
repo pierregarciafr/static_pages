@@ -12,7 +12,6 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
-
   # Cryptage
   def self.digest(string) # cryptage
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST
@@ -29,7 +28,12 @@ class User < ApplicationRecord
     activated
   end
 
-  def activate!
+  def activate
+    update_columns(activated: true, activated_at: Time.zone.now)
+  end
+
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
   end
 
   # Remember-me / Authentication parameters
