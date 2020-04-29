@@ -69,12 +69,12 @@ Rails.application.configure do
   host = 'staticpages-pg.herokuapp.com'
   config.action_mailer.default_url_options = { host: host, protocol: 'https' }
   ActionMailer::Base.smtp_settings = {
-    address: 'smtp.sendgrid.net',
-    port: 587,
-    authentication: :plain,
-    user_name: ENV['SENDGRID_USERNAME'],
-    password: ENV['SENDGRID_PASSWORD'],
+    user_name: 'app164923729@heroku.com', # ENV['SENDGRID_USERNAME'],
+    password: 'bdsgowrn5699', # ENV['SENDGRID_PASSWORD'],
     domain: 'heroku.com',
+    address: 'smtp.sendgrid.net',
+    port: 465, # 587,
+    authentication: 'plain',
     enable_starttls_auto: true
   }
 
