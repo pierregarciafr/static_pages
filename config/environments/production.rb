@@ -2,7 +2,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
-  config.cache_classes = true
+  config.cache_classes = false
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
@@ -69,11 +69,11 @@ Rails.application.configure do
   host = 'staticpages-pg.herokuapp.com'
   config.action_mailer.default_url_options = { host: host, protocol: 'https' }
   ActionMailer::Base.smtp_settings = {
-    user_name: 'app164923729@heroku.com', # ENV['SENDGRID_USERNAME'],
-    password: 'bdsgowrn5699', # ENV['SENDGRID_PASSWORD'],
+    user_name: ENV['SENDGRID_USERNAME'],
+    password: ENV['SENDGRID_PASSWORD'],
     domain: 'heroku.com',
     address: 'smtp.sendgrid.net',
-    port: 465, # 587,
+    :port => 465, # 587,
     authentication: 'plain',
     enable_starttls_auto: true
   }
