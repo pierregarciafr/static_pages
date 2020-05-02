@@ -5,7 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-puts 'erasing db'
+puts 'erasing Micropost DB'
+Micropost.destroy_all
+puts 'erasing User DB'
 User.destroy_all
 
 puts 'creating admin user'
@@ -43,4 +45,15 @@ User.create!(name:                  'Example User',
                activated_at: Time.zone.now
                )
 end
+
+puts 'Now creating microposts'
+
+users = User.order(:created_at).take(6)
+
+50.times do
+  print '.'
+  content = Faker::Lorem.sentence(word_count: 5)
+  users.each { |user| user.microposts.create(content: content) }
+end
+
 puts "Task finished !"
