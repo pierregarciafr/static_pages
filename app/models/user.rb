@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :microposts, dependent: :destroy
   attr_accessor :remember_token, :activation_token, :reset_token # cookie : accessibilite du token sans le storer dans la DB
   before_save :downcase_email
   before_create :create_activation_digest
