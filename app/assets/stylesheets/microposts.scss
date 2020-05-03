@@ -2,27 +2,71 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 /* microposts */
-.microposts { list-style: none; padding: 0;
-li {
-padding: 10px 0;
-border-top: 1px solid #e8e8e8; }
-.user { margin-top: 5em; padding-top: 0;
+$link-hovered: blue;
+
+.microposts {
+  list-style: none; padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+    .avatar {
+      display: block;
+      float: left;
+      height: 100%;
+      margin-right: 10px;
+      margin-top: 10px;
+    }
+    .text {
+
+    margin-left: 60px;
+    span {
+      line-height: 1;
+    }
+    .user a, .timestamp, .delete {
+      padding-top: 0;
+      color: #A7A7A7;
+      font-size: 0.7em;
+    }
+    .user a, .content a, .delete a {
+      &:hover {
+        text-decoration: none;
+        color: $link-hovered;
+      }
+    }
+    .content a {
+      display: block;
+      font-family: 'Georgia', serif;
+      color: black;
+
+      &:hover {
+        text-decoration: none;
+        color: $link-hovered;
+      }
+    }
+  }
 }
-.content {
-display: block; margin-left: 60px; img {
-display: block;
-padding: 5px 0; }
+  .delete {
+    display: block;
+    float: right;
+    a {
+      color: #A7A7A7;
+      font-size: 0.7em;
+    }
+  }
 }
-.timestamp {
-color: gray-light; display: block; margin-left: 60px;
-}
-.gravatar {
-float: left; margin-right: 10px; margin-top: 5px;
-} }
-aside { textarea {
-height: 100px;
-margin-bottom: 5px; }
-}
-span.image { margin-top: 10px; input {
-border: 0; }
-}
+
+aside {
+    textarea {
+      height: 100px;
+      margin-bottom: 5px;
+    }
+  }
+  span.image {
+    margin-top: 10px;
+    input {
+      border: 0;
+    }
+  }
+
+
+
