@@ -5,8 +5,11 @@
   <div class="text">
     <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
     <span class="content"><%= link_to micropost.content %></span>
-
-    <span class="image"><%= image_tag micropost.display_image if micropost.image.attached? %></span>
+    <% if micropost.image.attached? %>
+    <span class="image">
+      <%= cl_image_tag micropost.display_image  %>
+      <%#= image_tag micropost.display_image if micropost.image.attached? %>
+    </span>
 
     <% if current_user?(micropost.user) %>
       <div class="mt-2 d-flex justify-content-between">

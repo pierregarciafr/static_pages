@@ -8,7 +8,8 @@
     <%= f.submit "Save post", class: "btn" %>
 
     <div class="image">
-      <%= f.file_field :image, accept: "image/jpeg, image/gif, image/png" %>
+      <%= f.input :photo, as: :file %>
+      <%#= f.file_field :image, accept: "image/jpeg, image/gif, image/png" %>
     </div>
 
   <% end %>
