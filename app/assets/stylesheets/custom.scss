@@ -13,7 +13,7 @@ $btn-color: #676756;
 
 .btn {
   background-color: $btn-color;
-  color: #EFEFEF;
+  color: rgba(255,255,255,0.75);
   &:hover {
   color: white;
   }
@@ -23,7 +23,6 @@ $btn-color: #676756;
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
-
 }
 
 /* miscellaneous */
