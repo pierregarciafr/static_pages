@@ -5,15 +5,25 @@
 /* mixins, variables, etc. */
 $gray-medium-light: #eaeaea; /* universal */
 $state-danger-text: #F00;
-$general-background: plum;
+$general-background: #DEDECD;
 $container-background: seashell;
 $user-card-background: white;
 $link-hovered: blue;
+$btn-color: #676756;
+
+.btn {
+  background-color: $btn-color;
+  color: #EFEFEF;
+  &:hover {
+  color: white;
+  }
+}
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
   box-sizing:         border-box;
+
 }
 
 /* miscellaneous */

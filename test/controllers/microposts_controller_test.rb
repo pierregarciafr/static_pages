@@ -36,7 +36,7 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test "should abort destroy of another user's post" do
+  test "should redirect destroy for wrong micropost" do # ne trouve pas l'id de user.micropost dans correct_user
     log_in_as(@another_user)
     assert_no_difference 'Micropost.count' do
       delete micropost_path(@micropost)
@@ -44,5 +44,6 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
     assert_not flash.empty?
     assert_redirected_to root_path
   end
+
 
 end

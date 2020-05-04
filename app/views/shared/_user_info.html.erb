@@ -1,6 +1,6 @@
-<section class="user_info"> <!-- Remplacer user par current_user p 745-767 -->
-    <%= gravatar_for user %>
-    <h3><%= user.name %></h3>
-    Has posted <%= pluralize(user.microposts.count, "micropost") %>
-
-</section>
+<!-- Remplacer user par current_user p 745-767 -->
+    <div class="users show">
+      <%= gravatar_for user %>
+      <h3><%= user.name %></h3>
+      Has posted <%= pluralize(user.microposts.count, "micropost") %>
+    </div>
