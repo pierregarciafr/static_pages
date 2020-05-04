@@ -4,12 +4,13 @@
 $gray-medium-light: #A7A7A7;
 $user-card-background: white;
 
-.user_info {
-  padding: 1em;
-  border: 1px solid #636363;
-  box-shadow: 1px 1px 2px #A7A7A7;
-}
 
+  .user_info {
+    padding: 2em;
+    // border: 1px solid #636363;
+    box-shadow: 1px 1px 2px #A7A7A7;
+    background: white;
+  }
 section {
   padding: 10px 0;
   margin-top: 20px;
