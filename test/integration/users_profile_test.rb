@@ -19,7 +19,7 @@ class UsersProfileTest < ActionDispatch::IntegrationTest
     @user.microposts.paginate(page: 1).each do |micropost|
       assert_match micropost.content, response.body
       assert_select "a[href=?]", user_path(@user)
-      assert_select "a[href=?]", micropost_path(micropost)
+      assert_select "a[href=?]", micropost_path(micropost) # cette ligne de test marche pas
     end
   end
 end

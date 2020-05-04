@@ -1,33 +1,41 @@
 <% if logged_in? %>
-  <div class="row">
+<div class="row">
 
-    <div class="col-3"></div>
+  <div class="col-md-2"></div>
 
-    <div class="col-3">
-      <%= render 'shared/user_info', user: current_user %>
-    </div>
-
-    <div class="col-3">
-      <%= render 'shared/micropost_form' %>
-    </div>
-
-    <div class="col-3"></div>
-
-    <div class="col-md-3">
-      <h3>Feed</h3>
-      <%= render 'shared/feed' %>
-    </div>
-
+  <div class="col-md-4">
+    <aside>
+      <section>
+        <div class="user_info">
+          <%= render 'shared/user_info', user: current_user %>
+        </div>
+      </section>
+      <section class="micropost-form">
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
   </div>
+
+  <div class="col-md-4">
+    <%#= render 'shared/micropost_form' %>
+    <section>
+    <h3>Feed</h3>
+    <%= render 'shared/feed' %>
+    </section>
+  </div>
+
+  <div class="col-2"></div>
+
+</div>
 <% else %>
-  <div class="center jumbotron">
-    <h1>Welcome to the Sample App</h1>
-    <h2>
-      This is the home page for the
-      <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a> sample application.
-    </h2>
-    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
-  </div>
-  <%= link_to image_tag("rails.svg", alt: "Rails logo", width: "200"), "https://rubyonrails.org/" %>
-  <%= link_to image_tag("cat.jpg", alt: 'cat', id:'cat', width: '200'), "http://3.bp.blogspot.com/-3N2iNCjJHAo/T8tVOjtYHUI/AAAAAAAABkQ/D-JKUFGXjnc/s640/cute_cat102.jpg" %>
+<div class="center jumbotron">
+  <h1>Welcome to the Sample App</h1>
+  <h2>
+    This is the home page for the
+    <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a> sample application.
+  </h2>
+  <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+</div>
+<%= link_to image_tag("rails.svg", alt: "Rails logo", width: "200"), "https://rubyonrails.org/" %>
+<%= link_to image_tag("cat.jpg", alt: 'cat', id:'cat', width: '200'), "http://3.bp.blogspot.com/-3N2iNCjJHAo/T8tVOjtYHUI/AAAAAAAABkQ/D-JKUFGXjnc/s640/cute_cat102.jpg" %>
 <% end %>

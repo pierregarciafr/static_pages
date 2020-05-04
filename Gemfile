@@ -33,6 +33,12 @@ gem 'will_paginate-bootstrap'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'bcrypt',   '3.1.13'
 
+gem 'active_storage_validations', '>= 0.8.2'
+gem 'image_processing', '>= 1.9.3'
+gem 'mini_magick', '4.9.5'
+
+# gem 'cloudinary', '~> 1.12.0'
+
 group :development, :test do
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4'
