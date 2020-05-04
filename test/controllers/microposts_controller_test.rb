@@ -42,7 +42,7 @@ class MicropostsControllerTest < ActionDispatch::IntegrationTest
       delete micropost_path(@micropost)
     end
     assert_not flash.empty?
-    assert_redirected_to user_path(@user)
+    assert_redirected_to root_path
   end
 
 end

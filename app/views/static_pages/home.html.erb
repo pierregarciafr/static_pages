@@ -1,13 +1,22 @@
 <% if logged_in? %>
   <div class="row">
+
     <div class="col-3"></div>
+
     <div class="col-3">
       <%= render 'shared/user_info', user: current_user %>
     </div>
+
     <div class="col-3">
       <%= render 'shared/micropost_form' %>
     </div>
-  <div class="col-3"></div>
+
+    <div class="col-3"></div>
+
+    <div class="col-md-3">
+      <h3>Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
 
   </div>
 <% else %>
