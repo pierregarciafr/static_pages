@@ -10,6 +10,7 @@ $user-card-background: white;
     // border: 1px solid #636363;
     box-shadow: 1px 1px 2px #A7A7A7;
     background: white;
+    margin-top: 2.2em;
   }
 
 section {
@@ -34,10 +35,12 @@ section {
 }
 .show {
     padding: 1em 1em 2em 1em;
+
   }
 .users {
   list-style: none;
   margin-top: 2em;
+  border-radius: 5px;
 
   li {
     overflow: auto;

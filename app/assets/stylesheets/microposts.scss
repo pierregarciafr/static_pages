@@ -5,12 +5,16 @@
 $link-hovered: blue;
 
 .microposts {
-  list-style: none; padding: 0;
+  list-style: none;
+  padding: 0;
   li {
     background: white;
     padding: 10px 20px;
     border-top: 1px solid #e8e8e8;
-    border-radius: 4px;
+    border-radius: 5px;
+    // border-shadow: 10px 10px 2px #A7A7A7;
+    margin-bottom: 0.1em;
+
     .avatar {
       display: block;
       float: left;
@@ -58,17 +62,21 @@ $link-hovered: blue;
 }
 
 aside {
-    textarea {
-      height: 100px;
-      margin-bottom: 5px;
-    }
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
   }
-  span.image {
-    margin-top: 10px;
-    input {
-      border: 0;
-    }
+}
+span.image {
+  margin-top: 10px;
+  input {
+    border: 0;
   }
+}
+
+input#micropost_image {
+  border: 0 0 0;
+}
 
 
 

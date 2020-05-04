@@ -1,12 +1,11 @@
 <div class="micropost-form">
-  <h3>Micropost form</h3>
+  <h3>What's up doc ?</h3>
   <%= form_with(model: @micropost, url: microposts_path, local: true) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
 
-    <%= f.label :content %>
     <%= f.text_area :content, placeholder: "Compose new micropost...", class: 'form_control' %>
 
-    <%= f.submit "Save post", class: "btn btn-primary" %>
+    <%= f.submit "Save post", class: "btn" %>
 
     <div class="image">
       <%= f.file_field :image, accept: "image/jpeg, image/gif, image/png" %>
