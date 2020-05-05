@@ -8,9 +8,6 @@
     <% if micropost.photo.attached? %>
       <span class="image">
         <%= cl_image_tag micropost.photo.key, width:250 if micropost.photo.attached? %>
-
-        <%#= cl_image_tag (micropost.photo.key), width: 250, height: 250 if micropost.photo.attached? %>
-        <%#= image_tag micropost.display_image if micropost.image.attached? %>
       </span>
     <% end %>
     <% if current_user?(micropost.user) %>

@@ -7,14 +7,14 @@
     <%#= render 'shared/error_messages', object: f.object %>
 
     <%#= f.text_area :content, placeholder: "Compose new micropost...", class: 'form_control' %>
-    <%= f.input :content, class: 'form_control' %>
+    <%= f.input :content, class: 'form_control', label: false, placeholder: 'Compose new micropost, add a photo...' %>
 
     <%#= f.submit "Save post", class: "btn" %>
      <%= f.submit "Save post", class: "btn" %>
 
 
     <div class="image">
-      <%= f.input :photo, as: :file %>
+      <%= f.input :photo, as: :file, label: false %>
       <%#= f.file_field :image, accept: "image/jpeg, image/gif, image/png" %>
     </div>
 
