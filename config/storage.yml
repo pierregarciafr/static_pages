@@ -2,9 +2,24 @@ test:
   service: Disk
   root: <%= Rails.root.join("tmp/storage") %>
 
+cloudinary:
+  service: Cloudinary # Disk #
+
 local:
-  service: Disk
-  root: <%= Rails.root.join("storage") %>
+ root: <%= Rails.root.join("storage") %>
+
+  # cloud_name: droxurcle
+  # api_key: '349645886482266'
+  # api_secret: xudVGSBf-RNJlul9Br73WXGP2sk
+  # enhance_image_tag: true
+  # static_file_support: true
+
+# production:
+#   cloud_name: droxurcle
+#   api_key: '349645886482266'
+#   api_secret: xudVGSBf-RNJlul9Br73WXGP2sk
+#   enhance_image_tag: true
+#   static_file_support: true
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
