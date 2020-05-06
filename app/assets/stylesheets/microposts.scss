@@ -4,6 +4,17 @@
 /* microposts */
 $link-hovered: blue;
 
+section#feed {
+}
+section .micropost-form {
+  h3 {
+    font-size: 1.5em;
+    margin-top: 2em;
+  }
+}
+#user-microposts h5 {
+  margin: 1em 0 1em 0;
+}
 .microposts {
   list-style: none;
   padding: 0;

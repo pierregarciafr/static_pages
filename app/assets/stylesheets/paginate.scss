@@ -1,3 +1,6 @@
+$btn-color: #676756;
+$general-background: #DEDECD;
+
 .digg_pagination {
   background: white;
   cursor: default;
@@ -48,7 +51,8 @@
 
 
   .pagination {
-  background: white;
+  background: $btn-color;
+  border: 1px solid $btn-color;
   cursor: default;
   /* self-clearing method: */ }
   .pagination a, .pagination span, .pagination em {
@@ -57,21 +61,21 @@
     float: left;
     margin-right: 1px; }
   .pagination .disabled {
-    color: #999999;
-    border: 1px solid #dddddd; }
+    color: $general-background;
+    border: 1px solid $btn-color; }
   .pagination .current {
     font-style: normal;
     font-weight: bold;
-    background: #2e6ab1;
-    color: white;
-    border: 1px solid #2e6ab1; }
+    background: $general-background;
+    color:  $btn-color;
+    border: 2px solid  $general-background; }
   .pagination a {
     text-decoration: none;
-    color: #105cb6;
-    border: 1px solid #9aafe5; }
+    color: $general-background;
+    border: 1px solid $btn-color; }
     .pagination a:hover, .pagination a:focus {
-      color: #000033;
-      border-color: #000033; }
+      color: white;
+      border-color: $btn-color; }
   .pagination .page_info {
     background: #2e6ab1;
     color: white;

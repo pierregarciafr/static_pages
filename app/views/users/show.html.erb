@@ -1,8 +1,9 @@
 <% provide(:title, @user.name) %>
+
 <div class="row pt-5">
   <div class="col-md-2"></div>
-  <aside class="col-md-3">
-    <section class="user_info">
+  <aside class="col-md-4">
+    <section id="user_card" class="user_info">
       <div class="user_id">
           <%= render 'shared/user_info', user: @user %>
       </div>
@@ -11,9 +12,9 @@
           <%= render 'shared/stats' %> <!-- , user: @user -->
         </div>
     </section>
+    <%= render 'follow_form' if logged_in? %>
   </aside>
   <div class="col-md-4">
-    <%= render 'follow_form' if logged_in? %>
     <div id="user-microposts">
       <% if @user.microposts.any? %>
         <h5>Microposts (<%= @user.microposts.count %>)</h5>
@@ -24,6 +25,7 @@
       <% end %>
     </div>
   </div>
+  <div class="col-md-2"></div>
 
 </div>
 User email: <%= @user.email %><br/>
