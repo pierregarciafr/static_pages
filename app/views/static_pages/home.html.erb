@@ -5,9 +5,13 @@
 
   <div class="col-md-4">
     <aside>
-      <section>
-        <div class="user_info">
+      <section class="user_info">
+        <div class="user_id">
           <%= render 'shared/user_info', user: current_user %>
+
+        </div>
+        <div class="follow_info">
+          <%= render 'shared/stats', user: current_user %>
         </div>
       </section>
       <section class="micropost-form">

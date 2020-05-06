@@ -10,7 +10,33 @@ $user-card-background: white;
     // border: 1px solid #636363;
     box-shadow: 1px 1px 2px #A7A7A7;
     background: white;
-    margin-top: 2.2em;
+    margin-top: 2em;
+    padding: 1em;
+    .user_id {
+      display: block;
+      h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: 0.2px;
+      &.username {
+      padding-top: 1em;
+        }
+      }
+    }
+    .follow_info {
+      font-size: 0.7em;
+      float: left;
+      width: 100%;
+      margin-top: 1em;
+      a {
+        text-decoration: none;
+        color: inherit;
+        &:hover {
+          color: blue;
+        }
+      }
+
+    }
   }
 
 section {
@@ -19,9 +45,7 @@ section {
   span {
     display: block; margin-bottom: 3px; line-height: 1;
   }
-  h1 {
-    font-size: 1.4em; text-align: left; letter-spacing: -1px; margin-bottom: 3px; margin-top: 0px;
-  }
+
 }
 
 
