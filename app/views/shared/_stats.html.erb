@@ -1,12 +1,17 @@
-<div class="px-3 d-flex justify-content-between">
-  <div>
-    <%= link_to following_user_path(user) do %>
-      Following  <%= user.following.any? ? user.following.count : 0 %>
-    <% end %>
-  </div>
-  <div>
-    <%= link_to followers_user_path(user) do %>
-      Followers  <%= user.followers.any? ? user.followers.count : 0%>
-    <% end %>
+<% user = @user ||= current_user %> <!-- la condition n'opère que si @user.nil? -->
+<div id="stats">
+  <div class="px-3 d-flex justify-content-between">
+    <div class="flex-grow-1">
+      <div class="text-center border-right">
+        <strong><%= link_to user.following.any? ? user.following.count : 0, following_user_path(user) %></strong><br/>
+        Following
+      </div>
+    </div>
+    <div class="flex-grow-1">
+      <div class="text-center">
+        <strong><%= link_to user.followers.any? ? user.followers.count : 0, followers_user_path(user) %></strong><br/>
+        Followers
+      </div>
+    </div>
   </div>
 </div>

@@ -8,11 +8,12 @@
       </div>
 
         <div class="follow_info">
-          <%= render 'shared/stats', user: @user %>
+          <%= render 'shared/stats' %> <!-- , user: @user -->
         </div>
     </section>
   </aside>
   <div class="col-md-4">
+    <%= render 'follow_form' if logged_in? %>
     <div id="user-microposts">
       <% if @user.microposts.any? %>
         <h5>Microposts (<%= @user.microposts.count %>)</h5>
@@ -23,8 +24,6 @@
       <% end %>
     </div>
   </div>
-
-
 
 </div>
 User email: <%= @user.email %><br/>
