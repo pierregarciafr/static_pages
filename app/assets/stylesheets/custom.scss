@@ -13,6 +13,7 @@ $btn-color: #676756;
 
 .btn {
   background-color: $btn-color;
+  border-color: $btn-color;
   color: rgba(255,255,255,0.75);
   &:hover {
   color: white;
