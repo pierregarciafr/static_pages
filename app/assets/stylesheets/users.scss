@@ -4,6 +4,7 @@
 $gray-medium-light: #A7A7A7;
 $gray-dark: #636363;
 $user-card-background: white;
+$link-hovered: #FF8A00;
 
 
 .user_info {
@@ -39,7 +40,7 @@ $user-card-background: white;
       text-decoration: none;
       color: inherit;
       &:hover {
-        color: blue;
+        color: $link-hovered;
       }
     }
 
@@ -92,7 +93,7 @@ section#user_card {
       color: $gray-medium-light;
       &:hover {
         text-decoration: none;
-        color: blue;
+        color: $link-hovered;
       }
     }
   }
