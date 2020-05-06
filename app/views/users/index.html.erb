@@ -1,16 +1,16 @@
 <% provide(:title, 'All users') %>
-<div class="row">
+<div class="row pt-5">
   <div class="col-md-4"></div>
   <div class="col-md-4">
 
-    <h1>All users</h1>
-    <%= will_paginate @users, class: 'digg_pagination' %>
+    <h3>All users</h3>
+    <%= will_paginate @users, class: 'pagination' %>
 
-    <ul id="users-list" class="users">
+    <ul id="users-list" class="users my-3">
           <%= render @users %>
     </ul>
 
-    <%= will_paginate @users, class: 'digg_pagination' %>
+    <%= will_paginate @users, class: 'pagination' %>
 
   </div>
   <div class="col-md-4"></div>

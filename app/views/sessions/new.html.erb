@@ -10,7 +10,7 @@
 
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
-      <%= f.label :password %> <%= link_to "(Forgot password?)", password_resets_new_path %>
+      <%= f.label :password %> <%= link_to "(Forgot password?)", password_resets_new_path, class: 'link-hover' %>
       <%= f.password_field :password, class: 'form-control' %>
       <div class='form-check'>
         <%= f.label :remember_me do %>
@@ -21,7 +21,7 @@
       <%= f.submit "Log in", class: "btn btn-primary" %>
     <% end %>
 
-  <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  <p>New user? <%= link_to "Sign up now!", signup_path, class: 'link-hover' %></p>
 
   </div>
 

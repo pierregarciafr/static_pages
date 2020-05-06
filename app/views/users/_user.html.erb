@@ -3,7 +3,9 @@
   <div>
     <h3><%= link_to user.name, user %></h3>
     <div class='delete'>
-  <% if current_user.admin? && !current_user?(user) %>
+
+      <% if current_user.admin? && !current_user?(user) %>
+      Follow Unfollow
     <%= link_to "delete", user, method: :delete, data: { confirm: "You sure ?" } %>
   </div>
   <% end %>

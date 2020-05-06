@@ -8,8 +8,9 @@ $state-danger-text: #F00;
 $general-background: #DEDECD;
 $container-background: seashell;
 $user-card-background: white;
-$link-hovered: blue;
+$link-hovered: #FF8A00;
 $btn-color: #676756;
+$gray-dark: #636363;
 
 .btn {
   background-color: $btn-color;
@@ -17,6 +18,8 @@ $btn-color: #676756;
   color: rgba(255,255,255,0.75);
   &:hover {
   color: white;
+  background-color: $link-hovered;
+  border-color: $link-hovered;
   }
 }
 

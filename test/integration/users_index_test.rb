@@ -13,7 +13,7 @@ class UsersIndexTest < ActionDispatch::IntegrationTest
     get users_path
     assert_template 'users/index'
     # confirm that pagination is present on the page
-    assert_select 'div.digg_pagination', count: 2
+    assert_select 'div.pagination', count: 2
     first_page_of_users = User.paginate(page: 1)
     first_page_of_users.each do |user|
       if user.activated
