@@ -1,0 +1,17 @@
+<% provide(:title, 'Following') %>
+
+<div class="row">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <h1>Following</h1>
+        <%#= will_paginate @users, class: 'pagination' %>
+
+    <ul id="users-list" class="users">
+      <%= render @users %>
+    </ul>
+        <%#= will_paginate @users, class: 'pagination' %>
+
+  </div>
+  <div class="col-md-4"></div>
+</div>
+

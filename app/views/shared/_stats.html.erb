@@ -1,0 +1,12 @@
+<div class="px-3 d-flex justify-content-between">
+  <div>
+    <%= link_to following_user_path(user) do %>
+      Following  <%= user.following.any? ? user.following.count : 0 %>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to followers_user_path(user) do %>
+      Followers  <%= user.followers.any? ? user.followers.count : 0%>
+    <% end %>
+  </div>
+</div>
