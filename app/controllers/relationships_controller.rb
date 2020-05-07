@@ -18,7 +18,7 @@ class RelationshipsController < ApplicationController
     user = User.find(relationship.followed_id)
     if relationship.destroy
       flash[:success] = 'User cancelled from following.'
-      redirect_to user_path(user)
+      redirect_to root_path
     else
       flah[:danger] = 'Unfollow aborted.'
       render 'users/show'
