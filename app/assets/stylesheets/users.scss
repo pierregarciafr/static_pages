@@ -1,10 +1,13 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-$gray-medium-light: #A7A7A7;
-$gray-dark: #636363;
-$user-card-background: white;
-$link-hovered: #FF8A00;
+// @import "variables";
+$users-grayEA: #eaeaea; /* user in feed : border, delete on user card */
+$users-grayA7: #A7A7A7;
+$users-gray96: #969696; /* user info : paragraph, stats */
+$users-gray63: #636363; /* titres */
+$users-cardBackground: #FFF;
+$users-linkHovered: #FF8A00;
 
 
 .user_info {
@@ -28,7 +31,7 @@ $link-hovered: #FF8A00;
     }
     p {
       font-size: 0.7em;
-      color: #969696;
+      color: $users-gray96;
     }
   }
   .follow_info {
@@ -40,7 +43,7 @@ $link-hovered: #FF8A00;
       text-decoration: none;
       color: inherit;
       &:hover {
-        color: $link-hovered;
+        color: $users-linkHovered;
       }
     }
 
@@ -64,11 +67,14 @@ section#user_card {
 .gravatar_edit {
   margin-top: 15px;
 }
+
 #avatar_collection {
+  width: 100%;
   margin: 0;
   .case {
-  border: 3px ridge white;
 
+  border: 2px ridge white;
+  margin: 0.1em;
   }
 
 }
@@ -86,34 +92,34 @@ section#user_card {
   li.user-short-card {
     overflow: auto;
     padding: 10px 10px;
-    border-bottom: 1px solid $gray-medium-light;
-    background: $user-card-background;
+    border-bottom: 1px solid $users-grayEA;
+    background: $users-cardBackground;
     h3 a {
       padding-top: 1em;
       padding-bottom: 0;
       font-size: 18px;
-      color: $gray-dark;
+      color: $users-gray63;
       &:hover {
         text-decoration: none;
-        color: $link-hovered;
+        color: $users-linkHovered;
       }
 
     }
     .delete a {
       font-size: 0.9em;
       float: right;
-      color: $gray-medium-light;
+      color: $users-grayEA;
       &:hover {
         text-decoration: none;
-        color: $link-hovered;
+        color: $users-linkHovered;
       }
     }
   }
 }
 
 #stats {
-  color: #969696;
+  color: $users-gray96;
 }
 .border-right {
-  border-right: 2px solid #969696;
+  border-right: 2px solid $users-gray96;
 }

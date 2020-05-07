@@ -1,25 +1,30 @@
 // @import 'bootstrap-sprockets';
 // @import 'bootstrap';
 // @import "bootstrap/scss/bootstrap";
-
+// @import "variables";
 /* mixins, variables, etc. */
-$gray-medium-light: #eaeaea; /* universal */
-$state-danger-text: #F00;
-$general-background: #DEDECD;
-$container-background: seashell;
+
+
 $user-card-background: white;
-$link-hovered: #FF8A00;
-$btn-color: #676756;
-$gray-dark: #636363;
+$state-danger-text: #F00;
+
+
+$custom-gray63 : #636363; /* sombre titres */
+$custom-grayEA: #eaeaea; /* universal */
+
+$custom-generalBackground: #DEDECD;
+$custom-linkHovered: #FF8A00;
+$custom-btnColor: #676756;
+
 
 .btn {
-  background-color: $btn-color;
-  border-color: $btn-color;
+  background-color: $custom-btnColor;
+  border-color: $custom-btnColor;
   color: rgba(255,255,255,0.75);
   &:hover {
     color: white;
-    background-color: $link-hovered;
-    border-color: $link-hovered;
+    background-color: $custom-linkHovered;
+    border-color: $custom-linkHovered;
   }
 }
 
@@ -32,7 +37,7 @@ $gray-dark: #636363;
 
 /* miscellaneous */
 body {
-  background: $general-background;
+  background: $custom-generalBackground;
 }
 .container {
   // background: $container-background;
@@ -60,12 +65,13 @@ body {
 /* typography */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
-  color: #636363;
+  color: $custom-gray63;
 }
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
-  margin-bottom: 30px; text-align: center;
+  margin-bottom: 30px;
+  text-align: center;
 }
 h2 {
   font-size: 1.2em;
@@ -73,7 +79,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: gray-light;
+  color: $custom-grayEA;
 }
 p{
   font-size: 1.1em;
@@ -102,11 +108,11 @@ p{
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid gray-medium-light; color: gray-light;
+  border-top: 1px solid $custom-grayEA; color: gray-light;
   a {
     color: gray;
     &:hover {
-      color: gray-darker; }
+      color: $custom-gray63; }
     }
     small {
       float: left;
@@ -133,7 +139,9 @@ input {
 }
 
 .checkbox {
-  margin-top: -10px; margin-bottom: 10px; span {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
     margin-left: 20px;
     font-weight: normal;
   }
@@ -144,7 +152,8 @@ input {
 }
 
 #error_explanation {
-  color: red; ul {
+  color: red;
+  ul {
     color: red;
     margin: 0 0 30px 0;
   }
