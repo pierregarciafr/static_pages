@@ -1,15 +1,31 @@
 <% provide(:title, 'Followers') %>
 
 <div class="row pt-5">
-  <div class="col-md-4"></div>
+
+  <div class="col-md-2"></div>
+
   <div class="col-md-4">
-    <h3>Followed</h3>
-        <%#= will_paginate @users, class: 'pagination' %>
+    <aside>
+      <section class="user_info">
+        <div class="user_id">
+          <%= render 'shared/user_info', user: current_user %>
+        </div>
+        <div class="follow_info">
+          <%= render 'shared/stats' %> <!-- , user: current_user -->
+        </div>
+      </section>
+      <section>
+      </section>
+    </aside>
+  </div>
+  <div class="col-md-4">
+    <h3>Followers</h3>
+    <%= will_paginate @users, class: 'pagination' %>
 
     <ul id="users-list" class="users">
       <%= render @users %>
     </ul>
-        <%#= will_paginate @users, class: 'pagination' %>
+    <%= will_paginate @users, class: 'pagination' %>
 
   </div>
   <div class="col-md-4"></div>

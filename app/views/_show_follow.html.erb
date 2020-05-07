@@ -1,0 +1,14 @@
+<% provide(:title, @title) %>
+
+<div class="row pt-5">
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <h3>@title</h3>
+
+    <ul id="users-list" class="users">
+      <%= render @users %>
+    </ul>
+
+  </div>
+  <div class="col-md-4"></div>
+</div>

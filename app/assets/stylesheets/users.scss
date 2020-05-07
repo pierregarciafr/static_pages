@@ -64,6 +64,14 @@ section#user_card {
 .gravatar_edit {
   margin-top: 15px;
 }
+#avatar_collection {
+  margin: 0;
+  .case {
+  border: 3px ridge white;
+
+  }
+
+}
 .show-user {
     padding: 1em 1em 2em 1em;
   }
@@ -85,10 +93,14 @@ section#user_card {
       padding-bottom: 0;
       font-size: 18px;
       color: $gray-dark;
+      &:hover {
+        text-decoration: none;
+        color: $link-hovered;
+      }
 
     }
     .delete a {
-      font-size: 0.7em;
+      font-size: 0.9em;
       float: right;
       color: $gray-medium-light;
       &:hover {
