@@ -17,9 +17,9 @@ $gray-dark: #636363;
   border-color: $btn-color;
   color: rgba(255,255,255,0.75);
   &:hover {
-  color: white;
-  background-color: $link-hovered;
-  border-color: $link-hovered;
+    color: white;
+    background-color: $link-hovered;
+    border-color: $link-hovered;
   }
 }
 
