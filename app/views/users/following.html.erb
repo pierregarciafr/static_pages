@@ -1,6 +1,6 @@
 <% provide(:title, 'Following') %>
 
-<div class="row pt-5">
+<div class="row">
 
   <div class="col-md-2"></div>
 
@@ -14,12 +14,15 @@
           <%= render 'shared/stats' %> <!-- , user: current_user -->
         </div>
       </section>
-      <section id="avatar_collection" class="mt-5">
-        <% @users.each do |user| %>
-          <% gr_id = Digest::MD5::hexdigest(user.email.downcase) %>
-          <%= image_tag("https://secure.gravatar.com/avatar/#{gr_id}?s=40",
-           alt: user.name, class: 'case') %>
-        <% end %>
+      <section class="mt-5">
+        <div id="avatar_collection" class="d-flex flex-wrap align-content-center justify-content-between">
+          <% @users.each do |user| %>
+
+            <% gr_id = Digest::MD5::hexdigest(user.email.downcase) %>
+            <%= image_tag("https://secure.gravatar.com/avatar/#{gr_id}?s=50vh",
+             alt: user.name, class: 'case') %>
+          <% end %>
+        </div>
       </section>
     </aside>
   </div>

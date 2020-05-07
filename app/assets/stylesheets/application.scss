@@ -1,4 +1,12 @@
+/*
+    ...ommitted code...
+    *= require_self
+    *= require_tree .
+*/
+
+
 @import "bootstrap/scss/bootstrap";
+@import "variables";
 @import "custom";
 @import "paginate";
 @import "sessions";

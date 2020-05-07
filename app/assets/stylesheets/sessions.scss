@@ -1,6 +1,9 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$sessions-grayDark: #636363;
+$sessions-linkHovered: #FF8A00;
+
 
 .form-check {
   padding-left: 0.25em;
@@ -9,9 +12,9 @@
   margin-left: 1.25em;
 }
 a.link-hover {
-  color: $gray-dark;
+  color: $sessions-grayDark;
   &:hover {
-    color: $link-hovered;
+    color: $sessions-linkHovered;
     text-decoration: none;
   }
 }
