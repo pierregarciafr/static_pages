@@ -93,10 +93,14 @@ section#user_card {
       padding-bottom: 0;
       font-size: 18px;
       color: $gray-dark;
+      &:hover {
+        text-decoration: none;
+        color: $link-hovered;
+      }
 
     }
     .delete a {
-      font-size: 0.7em;
+      font-size: 0.9em;
       float: right;
       color: $gray-medium-light;
       &:hover {
