@@ -87,4 +87,24 @@ class UserTest < ActiveSupport::TestCase
       @user.destroy
     end
   end
+
+  test 'feed should display only current and following users posts' do
+    michael = users(:michael)
+    lana = users(:lana)
+    archer = users(:archer)
+    michael.follow(lana)
+    # Posts from followed user
+    lana.microposts.each do |post_following|
+      assert michael.feed.include?(post_following)
+    end
+    # Post from self
+    michael.microposts.each do |post_self|
+      assert michael.feed.include?(post_self)
+    end
+    # Post from non_followed
+    archer.microposts.each do |post_unfollowed|
+      assert_not michael.feed.include?(post_unfollowed)
+    end
+
+  end
 end
