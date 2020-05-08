@@ -4,7 +4,6 @@
 <% if logged_in? %>
 
 <div class="row">
-  <div class="col-md-2"></div>
   <div class="col-md-4">
     <aside>
       <section class="user_info">
@@ -21,31 +20,26 @@
     </aside>
   </div>
 
-  <div class="col-md-4">
+  <div class="col-md-8">
     <section id="feed">
       <h3>Feed</h3>
       <%= render 'shared/feed' %>
     </section>
   </div>
 
-  <div class="col-2"></div>
-
 </div>
 <% else %>
-<div class="row pt-5">
-    <div class="col-md-3"></div>
-
-  <div class="col-md-6">
-    <div class="center jumbotron">
-      <h1>Welcome to the Sample App</h1>
-      <h2>
-        This is the home page for the
-        <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a> sample application.
-      </h2>
-      <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+  <div class="row pt-5">
+    <div class="col-md-4"></div>
+    <div class="col-md-8">
+      <div class="center jumbotron">
+        <h1>Welcome to the Sample App</h1>
+        <h2>
+          This is the home page for the
+          <a href="https://www.railstutorial.org/">Ruby on Rails Tutorial</a> sample application.
+        </h2>
+        <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+      </div>
     </div>
   </div>
-  <div class="col-md-3"></div>
-
-</div>
 <% end %>

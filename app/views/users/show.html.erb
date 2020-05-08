@@ -1,7 +1,6 @@
 <% provide(:title, @user.name) %>
 
 <div class="row">
-  <div class="col-md-2"></div>
   <aside class="col-md-4">
     <section id="user_card" class="user_info">
       <div class="user_id">
@@ -14,7 +13,7 @@
     </section>
     <%= render 'follow_form' if logged_in? %>
   </aside>
-  <div class="col-md-4">
+  <div class="col-md-8">
     <div id="user-microposts">
       <% if @user.microposts.any? %>
         <h5>Microposts (<%= @user.microposts.count %>)</h5>
@@ -25,7 +24,6 @@
       <% end %>
     </div>
   </div>
-  <div class="col-md-2"></div>
 
 </div>
 User email: <%= @user.email %><br/>
