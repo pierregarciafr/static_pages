@@ -1,5 +1,5 @@
 $btn-color: #676756;
-$general-background: #DEDECD;
+$paginate-generalBackground: #DEDECD66;
 
   .pagination {
   background: $btn-color;
@@ -12,17 +12,17 @@ $general-background: #DEDECD;
     float: left;
     margin-right: 1px; }
   .pagination .disabled {
-    color: $general-background;
+    color: $paginate-generalBackground;
     border: 1px solid $btn-color; }
   .pagination .current {
     font-style: normal;
     font-weight: bold;
-    background: $general-background;
+    background: $paginate-generalBackground;
     color:  $btn-color;
-    border: 2px solid  $general-background; }
+    border: 2px solid  $paginate-generalBackground; }
   .pagination a {
     text-decoration: none;
-    color: $general-background;
+    color: $paginate-generalBackground;
     border: 1px solid $btn-color; }
     .pagination a:hover, .pagination a:focus {
       color: white;
