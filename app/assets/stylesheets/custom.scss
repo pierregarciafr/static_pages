@@ -12,9 +12,15 @@ $custom-grayA7 : #A7A7A7;
 $custom-gray63 : #636363; /* sombre titres */
 $custom-grayEA: #eaeaea; /* universal */
 
-$custom-generalBackground: #DEDECD;
+$custom-generalBackground: #DEDECD66;
 $custom-linkHovered: #FF8A00;
 $custom-btnColor: #676756;
+
+$custom-jumbotron: #efe8d4;
+
+.jumbotron {
+  background-color: $custom-jumbotron !important;
+}
 
 #home .jumbotron h2 {
   color: black;
@@ -29,7 +35,7 @@ a {
 }
 }
 
-#home, #about, #contact {
+#help, #home, #about, #contact {
   height: 100vh;
   a {
   color: $custom-grayA7;
@@ -46,7 +52,7 @@ a {
 .btn, #home .jumbotron .btn {
   background-color: $custom-btnColor;
   border-color: $custom-btnColor;
-  color: rgba(255,255,255,0.75);
+  color: $custom-generalBackground;
   &:hover {
     color: white;
     background-color: $custom-linkHovered;
