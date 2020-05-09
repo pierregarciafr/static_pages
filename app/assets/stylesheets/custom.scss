@@ -8,7 +8,7 @@
 $user-card-background: white;
 $state-danger-text: #F00;
 
-
+$custom-grayA7 : #A7A7A7;
 $custom-gray63 : #636363; /* sombre titres */
 $custom-grayEA: #eaeaea; /* universal */
 
@@ -16,8 +16,34 @@ $custom-generalBackground: #DEDECD;
 $custom-linkHovered: #FF8A00;
 $custom-btnColor: #676756;
 
+#home .jumbotron h2 {
+  color: black;
+a {
+  color: $custom-grayA7;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  &:hover {
+    text-decoration: none;
+    color: $custom-linkHovered;
+  }
+}
+}
 
-.btn {
+#home, #about, #contact {
+  height: 100vh;
+  a {
+  color: $custom-grayA7;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  &:hover {
+    text-decoration: none;
+    color: $custom-linkHovered;
+    }
+  }
+}
+
+
+.btn, #home .jumbotron .btn {
   background-color: $custom-btnColor;
   border-color: $custom-btnColor;
   color: rgba(255,255,255,0.75);
